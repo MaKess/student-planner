@@ -1,9 +1,16 @@
 #!/usr/bin/env pypy3
 
 import argparse
+import re
 from typing import Dict, Iterable, Tuple, Union, List, Any
 from enum import IntEnum, auto
 from functools import total_ordering
+
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Table
+from reportlab.platypus.paragraph import Paragraph
 
 MIN_ALIGN = 10
 
@@ -109,10 +116,15 @@ class Student:
 class Plan:
     def __init__(self) -> None:
         self._students: List[Student] = []
+        self._student_map: Dict[str, Student] = {}
         self._availability: Dict[Day, Dict[Time, Any]] = {d: {} for d in Day}
 
     def add_student(self, student: Student) -> None:
         self._students.append(student)
+        self._student_map[student.get_name()] = student
+
+    def get_student(self, name: str) -> Student:
+        return self._student_map.get(name)
 
     def add_availability(self, day: Day, start: Time, end: Time) -> None:
         day_availability = self._availability[day]
@@ -198,6 +210,82 @@ class Plan:
                 student, prio = student_prio
                 print(f" - {time}: {student.get_name()} ({prio})")
 
+    def export_pdf(self, fd, title=None):
+        doc = SimpleDocTemplate(fd,
+                                pagesize=A4,
+                                title=title if title else None,
+                                author="",
+                                subject="",
+                                producer="",
+                                creator="",
+                                topMargin=35,
+                                bottomMargin=35)
+
+        styles = getSampleStyleSheet()
+        styleH = styles['Heading1']
+
+        headline = [""]
+
+        data = [headline]
+
+        style = [
+            ('GRID', (0,0), (-1,-1), 0.5, colors.black),
+
+            #('BACKGROUND', (3, 3), (4, 4), colors.pink),
+
+            #('SPAN', (0,1), (1,2)),
+            #('SPAN', (-2,-2), (-1,-1)),
+        ]
+
+        time_min = Time(9, 0)
+        time_max = Time(21, 0)
+        time_map = {}
+        time_y = {}
+        time = time_min.copy()
+        y = 1
+        while time <= time_max:
+            time_line = [str(time)] + [""] * len(Day)
+            time_map[time] = time_line
+            time_y[time] = y
+
+            data.append(time_line)
+
+            time = time + MIN_ALIGN
+            y += 1
+
+        for day, day_schedule in self._availability.items():
+            headline.append(day.name)
+
+            if not day_schedule:
+                continue
+
+            for time, student_prio in day_schedule.items():
+                if not student_prio:
+                    continue
+
+                student, prio = student_prio
+
+                time_map[time][day] = student.get_name()
+
+                x = int(day)
+                y = time_y[time]
+                coord = (x, y)
+
+                if prio == 1:
+                    color = colors.limegreen
+                elif prio == 2:
+                    color = colors.yellow
+                else:
+                    color = colors.lightcoral
+
+                style.append(("BACKGROUND", coord, coord, color))
+
+        elements = []
+        if title:
+            elements.append(Paragraph(title, styleH))
+        elements.append(Table(data, style=style))
+        doc.build(elements)
+
 def read_students(fd):
     fr_en = {
         "Lundi": Day.MONDAY,
@@ -250,11 +338,37 @@ def read_students(fd):
 
         yield student
 
+def read_schedule(fd, plan: Plan):
+    day_map = {f"{day.name}:": day for day in Day}
+    current_day = None
+
+    schedule_regex = re.compile(r" - ([0-9]{1,2})h([0-9]{1,2}): (.+) \(([1-9])\)")
+
+    for line in fd:
+        line = line.rstrip()
+
+        check_day = day_map.get(line)
+        if check_day is not None:
+            current_day = check_day
+            continue
+
+        m = schedule_regex.match(line)
+
+        if m is not None:
+            start_h, start_m, name, prio = m.groups()
+            student = plan.get_student(name)
+            start = Time(int(start_h), int(start_m))
+            plan.take_available(current_day, start, student.get_lesson_duration(), (student, int(prio)))
+
+    return True
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Primitive constraint solver for student scheduling.')
     parser.add_argument("--availability", "-a", type=argparse.FileType("r"), required=True, help="student availability")
     parser.add_argument("--range-attempts", "-r", type=int, default=1, help="number of increments that are attempted for availability ranges")
     parser.add_argument("--range-increment", "-i", type=int, default=MIN_ALIGN * 2, help="increments that is for availability ranges")
+    parser.add_argument("--read-schedule", "-s", type=argparse.FileType("r"), help="read back an already printed schedule")
+    parser.add_argument("--export-pdf", "-p", type=argparse.FileType("wb"), help="export the schedule as a PDF")
 
     return parser.parse_args()
 
@@ -272,8 +386,15 @@ def main(args) -> Union[None, int]:
     for student in read_students(args.availability):
         plan.add_student(student)
 
-    if plan.schedule(range_attempts=args.range_attempts, range_increment=args.range_increment):
+    if args.read_schedule:
+        success = read_schedule(args.read_schedule, plan)
+    else:
+        success = plan.schedule(range_attempts=args.range_attempts, range_increment=args.range_increment)
+
+    if success:
         plan.print_schedule()
+        if args.export_pdf:
+            plan.export_pdf(args.export_pdf, f"Student schedule r{args.range_attempts} i{args.range_increment}")
     else:
         print("no schedule found")
 
