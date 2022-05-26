@@ -1,0 +1,707 @@
+[
+    {
+        "name": "L\u00e9onie MANIVET",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 11,
+                "from_minute": 0,
+                "to_hour": 12,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 0,
+                "to_hour": 14,
+                "to_minute": 30
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Lila BOUSSOUGOU",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "FRIDAY",
+                "from_hour": 17,
+                "from_minute": 20,
+                "to_hour": 17,
+                "to_minute": 50
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 16,
+                "from_minute": 0,
+                "to_hour": 16,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Camille DACUNHA",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 13,
+                "from_minute": 30,
+                "to_hour": 13,
+                "to_minute": 50
+            }
+        ]
+    },
+    {
+        "name": "In\u00e8s MIAO FANG",
+        "lesson_duration": 40,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 10,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 20,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Zo\u00e9 MIAO FANG",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 11,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 20,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Pauline CHARTRER",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 0
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 0,
+                "to_hour": 15,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Lula DOTTORI",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Helena FERRARA",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 0,
+                "to_hour": 15,
+                "to_minute": 0
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 11,
+                "from_minute": 0,
+                "to_hour": 12,
+                "to_minute": 0
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Elise METAYER",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 9,
+                "to_minute": 20
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 10,
+                "from_minute": 30,
+                "to_hour": 12,
+                "to_minute": 30
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 19,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Anouk SPELLA",
+        "lesson_duration": 50,
+        "availabilities": [
+            {
+                "day": "FRIDAY",
+                "from_hour": 15,
+                "from_minute": 30,
+                "to_hour": 16,
+                "to_minute": 20
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 20
+            }
+        ]
+    },
+    {
+        "name": "Jonas BEAUDIER",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 0,
+                "to_hour": 15,
+                "to_minute": 0
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 20,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 19,
+                "from_minute": 0,
+                "to_hour": 20,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Ma\u00ebl BENAYOUN",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "FRIDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Capucine BENAZET",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 11,
+                "from_minute": 30,
+                "to_hour": 12,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 0,
+                "to_hour": 15,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Viggo BRIQUET",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 17,
+                "to_minute": 20
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 18,
+                "from_minute": 40,
+                "to_hour": 19,
+                "to_minute": 10
+            }
+        ]
+    },
+    {
+        "name": "C\u00e9leste BRISSEAU",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 10,
+                "from_minute": 30,
+                "to_hour": 10,
+                "to_minute": 50
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 9,
+                "to_minute": 20
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 21,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Nour DJEHA\u00cfCH",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "THURSDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 13,
+                "from_minute": 30,
+                "to_hour": 14,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Kayah DUMAS",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "THURSDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 20
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 30,
+                "to_hour": 11,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Rapha\u00eblle GOVERNATORI",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 50,
+                "to_hour": 10,
+                "to_minute": 10
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 11,
+                "from_minute": 0,
+                "to_hour": 11,
+                "to_minute": 20
+            }
+        ]
+    },
+    {
+        "name": "Lizzie LAMAND",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 13,
+                "from_minute": 30,
+                "to_hour": 15,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Ana\u00efs LENOIR",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 15,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Tia LICHERI",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 10,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 11,
+                "from_minute": 30,
+                "to_hour": 12,
+                "to_minute": 30
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Vanille MEGY",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 18,
+                "to_minute": 0
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 9,
+                "from_minute": 0,
+                "to_hour": 11,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 19,
+                "to_minute": 0
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 19,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Jeanne MEIGNAN",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 10,
+                "from_minute": 30,
+                "to_hour": 10,
+                "to_minute": 50
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 20
+            }
+        ]
+    },
+    {
+        "name": "Chlo\u00e9 MIAO",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "THURSDAY",
+                "from_hour": 20,
+                "from_minute": 0,
+                "to_hour": 21,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 21,
+                "to_minute": 0
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 21,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Chlo\u00e9 MORIN",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "FRIDAY",
+                "from_hour": 17,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 30
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 19,
+                "from_minute": 30,
+                "to_hour": 20,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 17,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Baptiste PREYS",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 20,
+                "to_hour": 14,
+                "to_minute": 50
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 10,
+                "from_minute": 20,
+                "to_hour": 10,
+                "to_minute": 50
+            }
+        ]
+    },
+    {
+        "name": "Julie ROSELLO",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 14,
+                "from_minute": 30,
+                "to_hour": 15,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Louna STEFANI",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "MONDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 30
+            }
+        ]
+    },
+    {
+        "name": "Luna THYS",
+        "lesson_duration": 30,
+        "availabilities": [
+            {
+                "day": "FRIDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 30
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 19,
+                "from_minute": 0,
+                "to_hour": 20,
+                "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 21,
+                "to_minute": 0
+            }
+        ]
+    },
+    {
+        "name": "Gabrielle WEYRATH",
+        "lesson_duration": 20,
+        "availabilities": [
+            {
+                "day": "THURSDAY",
+                "from_hour": 18,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 50
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 20
+            }
+        ]
+    }
+]

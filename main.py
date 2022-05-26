@@ -1,6 +1,7 @@
 #!/usr/bin/env pypy3
 
 import argparse
+import json
 import re
 from typing import Dict, Iterable, Tuple, Union, List, Any
 from enum import IntEnum, auto
@@ -118,6 +119,30 @@ class Plan:
         self._students: List[Student] = []
         self._student_map: Dict[str, Student] = {}
         self._availability: Dict[Day, Dict[Time, Any]] = {d: {} for d in Day}
+
+    def export_availability(self):
+        ret = []
+        for student in self._students:
+            lesson_duration = student.get_lesson_duration()
+
+            availabilities = []
+            for day, start, end in student._availabilities:
+                if end is None:
+                    end = start + lesson_duration
+                availabilities.append({
+                    "day": day.name,
+                    "from_hour": start._h,
+                    "from_minute": start._m,
+                    "to_hour": end._h,
+                    "to_minute": end._m,
+                })
+
+            ret.append({
+                "name": student.get_name(),
+                "lesson_duration": lesson_duration,
+                "availabilities": availabilities,
+            })
+        return ret
 
     def add_student(self, student: Student) -> None:
         self._students.append(student)
@@ -369,6 +394,7 @@ def parse_args():
     parser.add_argument("--range-increment", "-i", type=int, default=MIN_ALIGN * 2, help="increments that is for availability ranges")
     parser.add_argument("--read-schedule", "-s", type=argparse.FileType("r"), help="read back an already printed schedule")
     parser.add_argument("--export-pdf", "-p", type=argparse.FileType("wb"), help="export the schedule as a PDF")
+    parser.add_argument("--export-json-input", type=argparse.FileType("w"), help="export the student settings as JSON")
 
     return parser.parse_args()
 
@@ -385,6 +411,9 @@ def main(args) -> Union[None, int]:
 
     for student in read_students(args.availability):
         plan.add_student(student)
+
+    if args.export_json_input:
+        json.dump(plan.export_availability(), args.export_json_input, indent=4)
 
     if args.read_schedule:
         success = read_schedule(args.read_schedule, plan)
