@@ -321,7 +321,7 @@ def read_students(fd):
     }
 
     def get_int(array, column, fallback):
-        if len(array) < column:
+        if len(array) <= column:
             return fallback
         s = array[column].strip()
         if not s:

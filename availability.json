@@ -43,6 +43,13 @@
                 "from_minute": 0,
                 "to_hour": 16,
                 "to_minute": 30
+            },
+            {
+                "day": "FRIDAY",
+                "from_hour": 15,
+                "from_minute": 20,
+                "to_hour": 15,
+                "to_minute": 50
             }
         ]
     },
@@ -56,6 +63,13 @@
                 "from_minute": 30,
                 "to_hour": 13,
                 "to_minute": 50
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 17,
+                "to_minute": 10
             }
         ]
     },
@@ -157,6 +171,13 @@
                 "from_minute": 30,
                 "to_hour": 17,
                 "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 30
             }
         ]
     },
@@ -231,6 +252,13 @@
                 "from_minute": 30,
                 "to_hour": 17,
                 "to_minute": 20
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 16,
+                "from_minute": 30,
+                "to_hour": 17,
+                "to_minute": 20
             }
         ]
     },
@@ -278,6 +306,13 @@
                 "from_minute": 0,
                 "to_hour": 17,
                 "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 17,
+                "to_minute": 20
             }
         ]
     },
@@ -325,6 +360,13 @@
                 "from_minute": 40,
                 "to_hour": 19,
                 "to_minute": 10
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 17,
+                "to_minute": 20
             }
         ]
     },
@@ -372,6 +414,13 @@
                 "from_minute": 30,
                 "to_hour": 14,
                 "to_minute": 0
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 17,
+                "from_minute": 0,
+                "to_hour": 17,
+                "to_minute": 30
             }
         ]
     },
@@ -392,6 +441,13 @@
                 "from_minute": 30,
                 "to_hour": 11,
                 "to_minute": 30
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 18,
+                "from_minute": 0,
+                "to_hour": 18,
+                "to_minute": 20
             }
         ]
     },
@@ -412,6 +468,13 @@
                 "from_minute": 0,
                 "to_hour": 11,
                 "to_minute": 20
+            },
+            {
+                "day": "THURSDAY",
+                "from_hour": 17,
+                "from_minute": 40,
+                "to_hour": 18,
+                "to_minute": 0
             }
         ]
     },
@@ -540,6 +603,13 @@
                 "from_minute": 0,
                 "to_hour": 17,
                 "to_minute": 20
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 15,
+                "from_minute": 0,
+                "to_hour": 15,
+                "to_minute": 20
             }
         ]
     },
@@ -654,6 +724,13 @@
                 "from_minute": 0,
                 "to_hour": 17,
                 "to_minute": 30
+            },
+            {
+                "day": "WEDNESDAY",
+                "from_hour": 16,
+                "from_minute": 50,
+                "to_hour": 17,
+                "to_minute": 20
             }
         ]
     },
@@ -701,6 +778,13 @@
                 "from_minute": 0,
                 "to_hour": 18,
                 "to_minute": 20
+            },
+            {
+                "day": "MONDAY",
+                "from_hour": 18,
+                "from_minute": 30,
+                "to_hour": 18,
+                "to_minute": 50
             }
         ]
     }
