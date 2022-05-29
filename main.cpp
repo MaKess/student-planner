@@ -133,11 +133,13 @@ struct fmt::formatter<Time> {
 
 class Student {
     public:
-        Student(const std::string& name, unsigned lesson_duration) :
+        Student(unsigned id, const std::string& name, unsigned lesson_duration) :
+            id{id},
             name{name},
             lesson_duration{lesson_duration / MIN_ALIGNMENT} {
         }
 
+        unsigned get_id() const { return id; }
         const std::string& get_name() const { return name; }
         unsigned get_lesson_duration() const { return lesson_duration * MIN_ALIGNMENT; }
         unsigned get_lesson_chunks() const { return lesson_duration; }
@@ -175,6 +177,7 @@ class Student {
         }
 
     protected:
+        const unsigned id;
         const std::string name;
         const unsigned lesson_duration;
         std::vector<std::pair<Time, Time>> availability_ranges; // pair = (start_time, end_time)
@@ -271,9 +274,10 @@ std::vector<Student> read_student_config(const nlohmann::json& config) {
     // implementation note: the element accesses below will fail if the data is not convertible with the "get" function
     std::vector<Student> students;
     for (const auto& student_config : config) {
+        const auto id = student_config.find("id").value().get<unsigned>();
         const auto name = student_config.find("name").value().get<std::string>();
         const auto lesson_duration = student_config.find("lesson_duration").value().get<unsigned>();
-        Student student(name, lesson_duration);
+        Student student(id, name, lesson_duration);
         for (const auto& [_, availability] : student_config.find("availabilities").value().items()) {
             const auto day         = parse_day(availability.find("day").value().get<std::string>());
             const auto from_hour   = availability.find("from_hour").value().get<unsigned>();
@@ -384,6 +388,7 @@ nlohmann::json export_schedult_result(const std::vector<Plan::schedule_result>& 
     nlohmann::json s = nlohmann::json::array();
     for (const auto& student_result : result) {
         s.emplace_back(nlohmann::json::object({
+            {"id", student_result.student->get_id()},
             {"name", student_result.student->get_name()},
             {"day", fmt::format("{:d}", student_result.start)},
             {"from_hour", student_result.start.get_hour()},
