@@ -1,6 +1,7 @@
 [
     {
         "name": "L\u00e9onie MANIVET",
+        "id": 0,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -28,6 +29,7 @@
     },
     {
         "name": "Lila BOUSSOUGOU",
+        "id": 1,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -55,6 +57,7 @@
     },
     {
         "name": "Camille DACUNHA",
+        "id": 2,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -75,6 +78,7 @@
     },
     {
         "name": "In\u00e8s MIAO FANG",
+        "id": 3,
         "lesson_duration": 40,
         "availabilities": [
             {
@@ -102,6 +106,7 @@
     },
     {
         "name": "Zo\u00e9 MIAO FANG",
+        "id": 4,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -129,6 +134,7 @@
     },
     {
         "name": "Pauline CHARTRER",
+        "id": 5,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -156,6 +162,7 @@
     },
     {
         "name": "Lula DOTTORI",
+        "id": 6,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -183,6 +190,7 @@
     },
     {
         "name": "Helena FERRARA",
+        "id": 7,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -210,6 +218,7 @@
     },
     {
         "name": "Elise METAYER",
+        "id": 8,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -237,6 +246,7 @@
     },
     {
         "name": "Anouk SPELLA",
+        "id": 9,
         "lesson_duration": 50,
         "availabilities": [
             {
@@ -264,6 +274,7 @@
     },
     {
         "name": "Jonas BEAUDIER",
+        "id": 10,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -291,6 +302,7 @@
     },
     {
         "name": "Ma\u00ebl BENAYOUN",
+        "id": 11,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -318,6 +330,7 @@
     },
     {
         "name": "Capucine BENAZET",
+        "id": 12,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -345,6 +358,7 @@
     },
     {
         "name": "Viggo BRIQUET",
+        "id": 13,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -372,6 +386,7 @@
     },
     {
         "name": "C\u00e9leste BRISSEAU",
+        "id": 14,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -399,6 +414,7 @@
     },
     {
         "name": "Nour DJEHA\u00cfCH",
+        "id": 15,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -426,6 +442,7 @@
     },
     {
         "name": "Kayah DUMAS",
+        "id": 16,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -453,6 +470,7 @@
     },
     {
         "name": "Rapha\u00eblle GOVERNATORI",
+        "id": 17,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -480,6 +498,7 @@
     },
     {
         "name": "Lizzie LAMAND",
+        "id": 18,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -500,6 +519,7 @@
     },
     {
         "name": "Ana\u00efs LENOIR",
+        "id": 19,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -527,6 +547,7 @@
     },
     {
         "name": "Tia LICHERI",
+        "id": 20,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -554,6 +575,7 @@
     },
     {
         "name": "Vanille MEGY",
+        "id": 21,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -588,6 +610,7 @@
     },
     {
         "name": "Jeanne MEIGNAN",
+        "id": 22,
         "lesson_duration": 20,
         "availabilities": [
             {
@@ -615,6 +638,7 @@
     },
     {
         "name": "Chlo\u00e9 MIAO",
+        "id": 23,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -642,6 +666,7 @@
     },
     {
         "name": "Chlo\u00e9 MORIN",
+        "id": 24,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -669,6 +694,7 @@
     },
     {
         "name": "Baptiste PREYS",
+        "id": 25,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -689,6 +715,7 @@
     },
     {
         "name": "Julie ROSELLO",
+        "id": 26,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -709,6 +736,7 @@
     },
     {
         "name": "Louna STEFANI",
+        "id": 27,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -736,6 +764,7 @@
     },
     {
         "name": "Luna THYS",
+        "id": 28,
         "lesson_duration": 30,
         "availabilities": [
             {
@@ -763,6 +792,7 @@
     },
     {
         "name": "Gabrielle WEYRATH",
+        "id": 29,
         "lesson_duration": 20,
         "availabilities": [
             {

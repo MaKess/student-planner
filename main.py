@@ -122,7 +122,7 @@ class Plan:
 
     def export_availability(self):
         ret = []
-        for student in self._students:
+        for student_id, student in enumerate(self._students):
             lesson_duration = student.get_lesson_duration()
 
             availabilities = []
@@ -139,6 +139,7 @@ class Plan:
 
             ret.append({
                 "name": student.get_name(),
+                "id": student_id,
                 "lesson_duration": lesson_duration,
                 "availabilities": availabilities,
             })
