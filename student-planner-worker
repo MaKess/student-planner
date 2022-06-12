@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+
+from time import sleep, perf_counter
+from turtle import update
+import requests
+import subprocess
+from tempfile import NamedTemporaryFile
+import json
+import traceback
+import argparse
+
+def doit(args):
+    joblist_response = requests.get(f"{args.url}/jobs")
+    joblist_data = joblist_response.json()
+
+    print(joblist_data)
+
+    if not joblist_data:
+        return
+
+    job_id = joblist_data[0]["job_id"]
+
+    job_url = f"{args.url}/jobs/{job_id}"
+
+    job_response = requests.get(job_url)
+    job_data = job_response.json()
+
+    print(job_data)
+
+    with NamedTemporaryFile("w", suffix=".json") as availability_json, NamedTemporaryFile("r", suffix=".json") as planning_json:
+        json.dump(job_data["student_availabilities"], availability_json)
+        availability_json.flush()
+
+        execution_time = -perf_counter()
+
+        cmd = [
+            args.executable,
+            "-i", availability_json.name,
+            "-a", str(job_data["range_attempts"]),
+            "-d", str(job_data["range_increments"]),
+            "-o", planning_json.name,
+        ]
+
+        print(cmd)
+
+        subprocess.check_call(cmd)
+
+        execution_time += perf_counter()
+
+        result_data = json.load(planning_json)
+
+    result_data["options"].update({
+        "job_id": job_id,
+        "revision": job_data["revision"],
+        "execution_time": execution_time,
+    })
+
+    print(result_data)
+
+    requests.post(job_url, json=result_data)
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-u", "--url", type=str, default="http://localhost:5000")
+    parser.add_argument("-e", "--executable", type=str, default="./student-planner")
+    parser.add_argument("-t", "--timeout", type=int, default=10)
+    return parser.parse_args()
+
+def main(args):
+    while True:
+        try:
+            doit(args)
+        except:
+            traceback.print_exc()
+
+        sleep(args.timeout)
+
+if __name__ == "__main__":
+    main(get_args())
