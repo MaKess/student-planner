@@ -43,15 +43,20 @@ def doit(args) -> bool:
 
         print(cmd)
 
-        subprocess.check_call(cmd)
+        try:
+            subprocess.check_call(cmd)
+            result_data = json.load(planning_json)
+            success = True
+        except subprocess.CalledProcessError:
+            result_data = {}
+            success = False
 
         execution_time += perf_counter()
-
-        result_data = json.load(planning_json)
 
     result_data["options"].update({
         "job_id": job_id,
         "revision": job_data["revision"],
+        "success": success,
         "execution_time": execution_time,
     })
 
