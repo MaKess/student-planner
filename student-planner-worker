@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from time import sleep, perf_counter
-from turtle import update
 import requests
 import subprocess
 from tempfile import NamedTemporaryFile
