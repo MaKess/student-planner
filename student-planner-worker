@@ -47,7 +47,7 @@ def doit(args) -> bool:
             result_data = json.load(planning_json)
             success = True
         except subprocess.CalledProcessError:
-            result_data = {}
+            result_data = {"options": {}}
             success = False
 
         execution_time += perf_counter()
