@@ -31,8 +31,8 @@ module = Extension(
         "ortools",
         "fmt",
     ],
-    extra_link_args=[
-        f"-Wl,-rpath,{OR_PATH}/lib",
+    runtime_library_dirs=[
+        f"{OR_PATH}/lib",
     ],
 )
 
