@@ -13,7 +13,6 @@ module = Extension(
         "studentplannermodule.cpp",
     ],
     extra_compile_args=[
-        "-DUSE_OR",
         "-DOR_PROTO_DLL=", # needed for v9.12
         "-std=c++20",
         "-I", "fmt/include",

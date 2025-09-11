@@ -1,11 +1,7 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #define PLAN_PY
-#ifdef USE_OR
-#include "plan-or.hpp"
-#else
 #include "plan.hpp"
-#endif
 
 static PyStructSequence_Field studentplanner_result_fields[] = {
     {"id", "ID of the Student"},

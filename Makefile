@@ -17,7 +17,6 @@ CXXFLAGS += \
 	-DUSE_LP_PARSER \
 	-DUSE_PDLP \
 	-DUSE_SCIP
-CXXFLAGS += -DUSE_OR
 LDFLAGS += -L $(OR_PATH)/lib -Wl,-rpath,$(OR_PATH)/lib -lortools
 
 .PHONY: all clean opt

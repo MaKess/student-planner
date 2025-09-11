@@ -11,12 +11,7 @@
 
 #include <fmt/format.h>
 #include "time.hpp"
-
-#ifdef USE_OR
-#include "plan-or.hpp"
-#else
 #include "plan.hpp"
-#endif
 
 std::vector<Student> read_student_config(const nlohmann::json& config) {
     // implementation note: the element accesses below will fail if the data is not convertible with the "get" function

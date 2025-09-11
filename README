@@ -1,1 +1,14 @@
-python3 setup.py install --install-lib install/
+when updating the fmt submodule, the `libfmt.a` has to be rebuilt:
+$ cd fmt
+$ git clean -ffdx
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=true ..
+$ make -j 8
+
+build standalone binary:
+$ make clean all
+
+build python module
+$ rm -rf build install
+$ python3 setup.py install --install-lib install/
