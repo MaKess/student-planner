@@ -12,3 +12,7 @@ $ make clean all
 build python module
 $ rm -rf build install
 $ python3 setup.py install --install-lib install/
+
+run:
+$ export PYTHONPATH=$PWD/install/studentplanner-1.0-py3.10-linux-x86_64.egg
+$ ./student-planner-worker-module -u <URL> -1

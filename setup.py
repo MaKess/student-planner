@@ -2,7 +2,7 @@
 
 "Solve challenging student scheduling"
 
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 # OR_PATH = "/pools/datapool/home/martin/coding/or-tools_x86_64_Ubuntu-22.04_cpp_v9.10.4067"
 OR_PATH = "/pools/datapool/home/martin/coding/or-tools_x86_64_Ubuntu-22.04_cpp_v9.12.4544"
@@ -12,18 +12,27 @@ module = Extension(
     sources=[
         "studentplannermodule.cpp",
     ],
+    include_dirs = [
+        "include",
+        "fmt/include",
+        f"{OR_PATH}/include",
+    ],
+    define_macros = [
+        ("OR_PROTO_DLL", ""), # needed for v9.12
+    ],
     extra_compile_args=[
-        "-DOR_PROTO_DLL=", # needed for v9.12
         "-std=c++20",
-        "-I", "fmt/include",
-        "-I", f"{OR_PATH}/include",
+    ],
+    library_dirs = [
+        f"{OR_PATH}/lib",
+        "fmt/build",
+    ],
+    libraries = [
+        "ortools",
+        "fmt",
     ],
     extra_link_args=[
-        "-L", f"{OR_PATH}/lib",
         f"-Wl,-rpath,{OR_PATH}/lib",
-        "-lortools",
-        "-L", "fmt/build",
-        "-lfmt",
     ],
 )
 
