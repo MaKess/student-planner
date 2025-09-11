@@ -1,1 +1,5 @@
-student-planner
+*.o
+*.d
+or
+build
+install

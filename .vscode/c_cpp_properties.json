@@ -3,13 +3,19 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/fmt/include",
+                "/pools/datapool/home/martin/coding/or-tools",
+                "/pools/datapool/home/martin/coding/or-tools/build",
+                "/pools/datapool/home/martin/coding/or-tools/build/_deps/absl-src",
+                "/pools/datapool/home/martin/coding/or-tools/build/_deps/protobuf-src/src",
+                "/usr/include/python3.10"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "linux-clang-x64"
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "${default}"
         }
     ],
     "version": 4

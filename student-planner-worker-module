@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+
+from time import sleep, perf_counter
+import requests
+import json
+import traceback
+import argparse
+from collections import namedtuple
+
+# add PYTHONPATH to "studentplanner" location
+# from sys import path
+# path.append("install")
+
+from studentplanner import solve
+
+Student = namedtuple("Student", ["id", "name", "lesson_duration", "availabilities"])
+Availability = namedtuple("Availability", ["day", "from_hour", "from_minute", "to_hour", "to_minute"])
+
+result_attrs = ("id", "name", "day", "from_hour", "from_minute", "to_hour", "to_minute")
+
+def doit(args) -> bool:
+    url = args.url.rstrip("/")
+
+    if args.job or args.input_job:
+        job_id = args.job
+    else:
+        joblist_response = requests.get(f"{url}/jobs/")
+        joblist_data = joblist_response.json()
+
+        print("joblist:")
+        print(joblist_data)
+
+        if not joblist_data:
+            return False
+
+        job_id = joblist_data[0]["job_id"]
+
+    job_url = f"{url}/jobs/{job_id}"
+
+    if args.input_job:
+        job_data = json.load(args.input_job)
+    else:
+        job_response = requests.get(job_url)
+        job_data = job_response.json()
+
+    print(job_data)
+
+    if args.dump_job:
+        json.dump(job_data, args.dump_job, indent=2)
+        return True
+
+    range_attempts = int(job_data["range_attempts"])
+    range_increments = int(job_data["range_increments"])
+    minimize_wishes_prio = bool(job_data["minimize_wishes_prio"])
+    minimize_holes = bool(job_data["minimize_holes"])
+    availability_index_scale = int(job_data["availability_index_scale"])
+    lunch_time_from_hour = int(job_data["lunch_time_from_hour"])
+    lunch_time_from_minute = int(job_data["lunch_time_from_minute"])
+    lunch_time_to_hour = int(job_data["lunch_time_to_hour"])
+    lunch_time_to_minute = int(job_data["lunch_time_to_minute"])
+    lunch_hole_neg_prio = int(job_data["lunch_hole_neg_prio"])
+    non_lunch_hole_prio = int(job_data["non_lunch_hole_prio"])
+    allow_skip = True
+    skip_prio = 1000000
+
+    students = []
+    for student_j in job_data["student_availabilities"]:
+        availabilities = [Availability(**availability) for availability in student_j["availabilities"]]
+        students.append(Student(student_j["id"], student_j["name"], student_j["lesson_duration"], availabilities))
+
+    result_data = {"options": {
+        "job_id": job_id,
+        "revision": job_data["revision"],
+    }}
+
+    execution_time = -perf_counter()
+
+    try:
+        solution, skipped = solve(
+            students=students,
+            minimize_wishes_prio=minimize_wishes_prio,
+            minimize_holes=minimize_holes,
+            availability_index_scale=availability_index_scale,
+            lunch_time_from_hour=lunch_time_from_hour,
+            lunch_time_from_minute=lunch_time_from_minute,
+            lunch_time_to_hour=lunch_time_to_hour,
+            lunch_time_to_minute=lunch_time_to_minute,
+            lunch_hole_neg_prio=lunch_hole_neg_prio,
+            non_lunch_hole_prio=non_lunch_hole_prio,
+            allow_skip=allow_skip,
+            skip_prio=skip_prio,
+        )
+        assert not skipped or allow_skip
+        result_data["schedule"] = [{k: getattr(student, k) for k in result_attrs} for student in solution]
+        result_data["skipped"] = skipped
+        result_data["options"]["success"] = True
+    except Exception as ex:
+        print(ex)
+        result_data["options"]["success"] = False
+
+    execution_time += perf_counter()
+
+    result_data["options"]["execution_time"] = execution_time
+
+    print(result_data)
+
+    if args.input_job and args.job is None:
+        print("skipped upload")
+    else:
+        requests.post(job_url, json=result_data)
+
+
+    return True
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-u", "--url", type=str, default="http://localhost:5000")
+    parser.add_argument("-j", "--job", type=int)
+    parser.add_argument("-t", "--timeout", type=int, default=10)
+    parser.add_argument("-1", "--oneshot", action="store_true")
+    parser.add_argument("-d", "--dump-job", type=argparse.FileType("w"))
+    parser.add_argument("-i", "--input-job", type=argparse.FileType("r"))
+    return parser.parse_args()
+
+def main(args):
+    if args.job or args.dump_job or args.input_job:
+        doit(args)
+        return
+
+    while True:
+        try:
+            if doit(args):
+                # if the evaluation was successful, skip right to the next round without the "sleep" below
+                continue
+        except:
+            traceback.print_exc()
+
+        if args.oneshot:
+            break
+
+        sleep(args.timeout)
+
+if __name__ == "__main__":
+    main(get_args())
