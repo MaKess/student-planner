@@ -53,7 +53,6 @@ def doit(args) -> bool:
     range_increments = int(job_data["range_increments"])
     minimize_wishes_prio = bool(job_data["minimize_wishes_prio"])
     minimize_holes = bool(job_data["minimize_holes"])
-    availability_index_scale = int(job_data["availability_index_scale"])
     lunch_time_from_hour = int(job_data["lunch_time_from_hour"])
     lunch_time_from_minute = int(job_data["lunch_time_from_minute"])
     lunch_time_to_hour = int(job_data["lunch_time_to_hour"])
@@ -80,7 +79,6 @@ def doit(args) -> bool:
             students=students,
             minimize_wishes_prio=minimize_wishes_prio,
             minimize_holes=minimize_holes,
-            availability_index_scale=availability_index_scale,
             lunch_time_from_hour=lunch_time_from_hour,
             lunch_time_from_minute=lunch_time_from_minute,
             lunch_time_to_hour=lunch_time_to_hour,

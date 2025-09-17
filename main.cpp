@@ -198,7 +198,6 @@ int main(int argc, char* const* argv) {
         .range_increment = args.range_increment,
         .minimize_wishes_prio = true,
         .minimize_holes = true,
-        .availability_index_scale = 5,
         .lunch_time_from_hour = 12,
         .lunch_time_from_minute = 0,
         .lunch_time_to_hour = 13,

@@ -13,7 +13,6 @@ struct solve_config {
     unsigned range_increment;
     bool minimize_wishes_prio;
     bool minimize_holes;
-    unsigned availability_index_scale;
     unsigned lunch_time_from_hour;
     unsigned lunch_time_from_minute;
     unsigned lunch_time_to_hour;

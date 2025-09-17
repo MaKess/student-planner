@@ -72,7 +72,9 @@ class Student {
                     auto var = cp_model.NewBoolVar().WithName(s);
                     availabilities.emplace_back(t, var);
                     all_vars.push_back(var);
-                    const unsigned prio = student_prio + availability_index * cfg.availability_index_scale;
+                    // the factor "10" doesn't really do much here, since *everyone* gets it.
+                    // it's just there so that the division by "student_prio" has something to work with and stay an integer
+                    const unsigned prio = 10 * availability_index / student_prio;
                     AT(wishes, t.get_chunk_of_week()).emplace_back(var, prio);
                     t += cfg.range_increment;
                     ++attempt;

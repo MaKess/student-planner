@@ -3,9 +3,12 @@
 "Solve challenging student scheduling"
 
 from setuptools import setup, Extension
+from glob import glob
 
 # OR_PATH = "/pools/datapool/home/martin/coding/or-tools_x86_64_Ubuntu-22.04_cpp_v9.10.4067"
 OR_PATH = "/pools/datapool/home/martin/coding/or-tools_x86_64_Ubuntu-22.04_cpp_v9.12.4544"
+
+HEADER = sorted(glob("include/*.hpp") + glob("fmt/include/fmt/*.h"))
 
 module = Extension(
     "studentplanner",
@@ -17,6 +20,7 @@ module = Extension(
         "fmt/include",
         f"{OR_PATH}/include",
     ],
+    depends = HEADER,
     define_macros = [
         ("OR_PROTO_DLL", ""), # needed for v9.12
     ],
