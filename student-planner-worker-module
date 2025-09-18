@@ -49,8 +49,6 @@ def doit(args) -> bool:
         json.dump(job_data, args.dump_job, indent=2)
         return True
 
-    range_attempts = int(job_data["range_attempts"])
-    range_increments = int(job_data["range_increments"])
     minimize_wishes_prio = bool(job_data["minimize_wishes_prio"])
     minimize_holes = bool(job_data["minimize_holes"])
     lunch_time_from_hour = int(job_data["lunch_time_from_hour"])
